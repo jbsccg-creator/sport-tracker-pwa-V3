@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Suivi Sportif A/B</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Programme annuel</p>
+      <h1>Suivi Sportif A/B</h1>
+    </div>
+    <button id="installBtn" class="ghost hidden" type="button">Installer</button>
+  </header>
+
+  <nav class="tabs" aria-label="Navigation principale">
+    <button type="button" data-view="today" class="active">Aujourd'hui</button>
+    <button type="button" data-view="planning">Planning</button>
+    <button type="button" data-view="session">Séance</button>
+    <button type="button" data-view="charts">Graphiques</button>
+    <button type="button" data-view="routine">Routine</button>
+    <button type="button" data-view="history">Historique</button>
+    <button type="button" data-view="settings">Réglages</button>
+  </nav>
+
+  <main>
+    <section id="today" class="view active"></section>
+    <section id="planning" class="view"></section>
+    <section id="session" class="view"></section>
+    <section id="charts" class="view"></section>
+    <section id="routine" class="view"></section>
+    <section id="history" class="view"></section>
+    <section id="settings" class="view"></section>
+  </main>
+
+  <section id="timer" class="timer hidden" role="status" aria-live="polite">
+    <div>
+      <span class="eyebrow">Repos en cours</span>
+      <strong id="timerTime">00:00</strong>
+      <span id="timerLabel" class="muted">Repos</span>
+    </div>
+    <div class="timer-actions">
+      <button type="button" id="pauseTimer">Pause</button>
+      <button type="button" id="skipTimer">Passer</button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="programme.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
